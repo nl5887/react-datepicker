@@ -619,7 +619,9 @@ export default class DatePicker extends React.Component {
     if (this.props.showTimeInput) {
       this.setOpen(true);
     }
-    this.setState({ inputValue: null });
+    if (!this.props.inline) {
+      this.setState({ inputValue: null });
+    }
   };
 
   onInputClick = () => {
